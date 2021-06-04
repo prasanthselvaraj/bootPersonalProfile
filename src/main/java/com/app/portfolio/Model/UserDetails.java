@@ -7,13 +7,15 @@ public class UserDetails {
    private String skypeId;
    private String briefId;
    private String status;
+   private String thanksMessage;
    private String respMessage;
 
     public UserDetails() {
 
     }
 
-    public UserDetails(String name, String emailId, String phoneNum, String skypeId, String briefId, String status, String respMessage){
+    public UserDetails(String name, String emailId, String phoneNum, String skypeId, String briefId, String status,
+                       String thanksMessage, String respMessage){
         super();
         this.name = name;
         this.emailId = emailId;
@@ -21,6 +23,7 @@ public class UserDetails {
         this.skypeId = skypeId;
         this.briefId = briefId;
         this.status = status;
+        this.thanksMessage = thanksMessage;
         this.respMessage = respMessage;
     }
 
@@ -78,5 +81,13 @@ public class UserDetails {
 
     public void setRespMessage(String respMessage) {
         this.respMessage = respMessage;
+    }
+
+    public String getThanksMessage() {
+        return thanksMessage;
+    }
+
+    public void setThanksMessage(String thanksMessage) {
+        this.thanksMessage = thanksMessage;
     }
 }

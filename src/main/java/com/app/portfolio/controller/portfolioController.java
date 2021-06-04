@@ -28,11 +28,17 @@ public class portfolioController {
         try{
             javaMailSender.send(mail);
             userDetails.setStatus("SUCCESS");
-            userDetails.setRespMessage(new StringBuilder().append("Thanks ").append(userDetails.getName())
-                    .append(" mail received").toString());
+            userDetails.setThanksMessage(new StringBuilder().append("Thanks ").append(userDetails.getName()).toString());
+            userDetails.setRespMessage(new StringBuilder().append(" I received your mail and will reply back ASAP").toString());
+            return userDetails;
         } catch(Exception e){
             System.out.print("Mail Sender Exception => " + e);
+            userDetails.setStatus("FAILURE");
+            userDetails.setThanksMessage(new StringBuilder().append("Sorry ").append(userDetails.getName()).toString());
+            userDetails.setRespMessage(new StringBuilder().append("We are facing some technical issues, can you please retry in few minutes ")
+                    .append("OR use any other forms of contact displayed").toString());
+            return userDetails;
         }
-        return userDetails;
+
     }
 }
