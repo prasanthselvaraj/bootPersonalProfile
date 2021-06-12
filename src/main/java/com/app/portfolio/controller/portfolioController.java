@@ -13,6 +13,11 @@ public class portfolioController {
     @Autowired
     JavaMailSender javaMailSender;
 
+    @GetMapping("/test")
+    public String testService(){
+        return "Service call success";
+    }
+
     @PostMapping("/userData")
     @CrossOrigin(origins = "http://localhost:4200")
     public UserDetails startApplication(@RequestBody UserDetails userDetails){
