@@ -19,7 +19,7 @@ public class portfolioController {
     }
 
     @PostMapping("/userData")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://prasanthportfolio-beta.web.app/")
     public UserDetails startApplication(@RequestBody UserDetails userDetails){
         StringBuilder bodyString = new StringBuilder();
         SimpleMailMessage mail = new SimpleMailMessage();
